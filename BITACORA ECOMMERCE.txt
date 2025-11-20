@@ -1,0 +1,39 @@
+BITACORA ECOMMERCE
+
+1. Instalar Docker y levantar los contenedores
+
+	a. docker run -d --name ec-rabbitmq -p 15672:15672 -p 5672:5672 rabbitmq:3.13.6-management
+	b. docker run -d --name ec-mongo -p 27017:27017 mongo:6.0
+	c. docker run -d --name ec-redis -p 6379:6379 redis:7
+	d. docker ps
+2. Crear arquitectura del Microservicio UserFeed:
+
+Domain: Entidades (UserComment, User) y Ports (interfaces)
+Application: Casos de uso y DTOs
+Infrastructure: Adapters para MongoDB, RabbitMQ y Auth Service
+API: Controllers REST y configuración
+Características implementadas:
+
+✅ MongoDB para persistencia
+✅ RabbitMQ para mensajería asíncrona (logout events)
+✅ Autenticación JWT integrada con Auth Service
+✅ Swagger/OpenAPI para documentación interactiva
+✅ CORS configurado
+✅ Dockerfile para deployments
+
+📡 Endpoints disponibles:
+POST /api/v1/comments - Crear comentario (requiere auth)
+GET /api/v1/comments/article/{articleId} - Obtener comentarios (público)
+PUT /api/v1/comments/{id} - Actualizar comentario (solo autor)
+DELETE /api/v1/comments/{id} - Eliminar comentario (solo autor)
+
+🌐 Acceso:
+API: http://localhost:5000
+Swagger UI: http://localhost:5000 (ya abierto en el navegador)
+RabbitMQ Admin: http://localhost:15672 (guest/guest)
+
+📚 Próximos pasos:
+Para probar el microservicio completamente necesitarás:
+
+Levantar el servicio Auth (puerto 3000) para obtener tokens JWT, acceder desde postman
+Usar Swagger para probar los endpoints, acceder a http://localhost:5005/index.html
