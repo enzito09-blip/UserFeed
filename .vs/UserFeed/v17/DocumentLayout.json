@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\EF66622\\source\\repos\\Facu\\userfeed-service\\",
+  "WorkspaceRootPath": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E2548789-12AF-4229-85B2-6D6EADCBDE38}|UserFeed.Api\\UserFeed.Api.csproj|c:\\users\\ef66622\\source\\repos\\facu\\userfeed-service\\userfeed.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{E2548789-12AF-4229-85B2-6D6EADCBDE38}|UserFeed.Api\\UserFeed.Api.csproj|c:\\users\\ef66622\\source\\repos\\facu\\userfeed\\userfeed.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{E2548789-12AF-4229-85B2-6D6EADCBDE38}|UserFeed.Api\\UserFeed.Api.csproj|solutionrelative:userfeed.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E2548789-12AF-4229-85B2-6D6EADCBDE38}|UserFeed.Api\\UserFeed.Api.csproj|c:\\users\\ef66622\\source\\repos\\facu\\userfeed-service\\userfeed.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E2548789-12AF-4229-85B2-6D6EADCBDE38}|UserFeed.Api\\UserFeed.Api.csproj|c:\\users\\ef66622\\source\\repos\\facu\\userfeed\\userfeed.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E2548789-12AF-4229-85B2-6D6EADCBDE38}|UserFeed.Api\\UserFeed.Api.csproj|solutionrelative:userfeed.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -32,11 +32,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\EF66622\\source\\repos\\Facu\\userfeed-service\\UserFeed.Api\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Api\\appsettings.json",
               "RelativeDocumentMoniker": "UserFeed.Api\\appsettings.json",
-              "ToolTip": "C:\\Users\\EF66622\\source\\repos\\Facu\\userfeed-service\\UserFeed.Api\\appsettings.json",
+              "ToolTip": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Api\\appsettings.json",
               "RelativeToolTip": "UserFeed.Api\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-11-18T14:42:52.877Z",
               "EditorCaption": ""
@@ -45,9 +45,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\EF66622\\source\\repos\\Facu\\userfeed-service\\UserFeed.Api\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Api\\Program.cs",
               "RelativeDocumentMoniker": "UserFeed.Api\\Program.cs",
-              "ToolTip": "C:\\Users\\EF66622\\source\\repos\\Facu\\userfeed-service\\UserFeed.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Api\\Program.cs",
               "RelativeToolTip": "UserFeed.Api\\Program.cs",
               "ViewState": "AgIAAJ4AAAAAAAAAAIAwwLEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

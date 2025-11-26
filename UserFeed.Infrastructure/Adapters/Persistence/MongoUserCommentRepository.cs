@@ -30,10 +30,7 @@ public class MongoUserCommentRepository : IUserCommentRepository
 
     public async Task<UserComment?> GetByIdAsync(string id)
     {
-        var filter = Builders<UserComment>.Filter.And(
-            Builders<UserComment>.Filter.Eq(c => c.Id, id),
-            Builders<UserComment>.Filter.Eq(c => c.IsDeleted, false)
-        );
+        var filter = Builders<UserComment>.Filter.Eq(c => c.Id, id);
         return await _collection.Find(filter).FirstOrDefaultAsync();
     }
 
@@ -65,6 +62,16 @@ public class MongoUserCommentRepository : IUserCommentRepository
             .ToListAsync();
     }
 
+    public async Task<UserComment?> GetByUserAndArticleAsync(string userId, string articleId)
+    {
+        var filter = Builders<UserComment>.Filter.And(
+            Builders<UserComment>.Filter.Eq(c => c.UserId, userId),
+            Builders<UserComment>.Filter.Eq(c => c.ArticleId, articleId),
+            Builders<UserComment>.Filter.Eq(c => c.IsDeleted, false)
+        );
+        return await _collection.Find(filter).FirstOrDefaultAsync();
+    }
+
     public async Task<UserComment> CreateAsync(UserComment comment)
     {
         await _collection.InsertOneAsync(comment);
@@ -87,21 +94,4 @@ public class MongoUserCommentRepository : IUserCommentRepository
         }
     }
 
-    public async Task<IEnumerable<(string ArticleId, int CommentCount, double AverageRating)>> GetDistinctArticlesAsync()
-    {
-        var filter = Builders<UserComment>.Filter.Eq(c => c.IsDeleted, false);
-        var comments = await _collection.Find(filter).ToListAsync();
-        
-        var articleGroups = comments
-            .GroupBy(c => c.ArticleId)
-            .Select(g => (
-                ArticleId: g.Key,
-                CommentCount: g.Count(),
-                AverageRating: g.Average(c => c.Rating)
-            ))
-            .OrderByDescending(a => a.CommentCount)
-            .ToList();
-        
-        return articleGroups;
-    }
 }

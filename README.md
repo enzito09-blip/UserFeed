@@ -120,6 +120,33 @@ docker run -d --name userfeed-service -p 5005:5005 userfeed-service
 docker run --add-host host.docker.internal:172.17.0.1 -d --name userfeed-service -p 5005:5005 userfeed-service
 ```
 
+## Tests
+
+El proyecto incluye tests unitarios y de integración exhaustivos (52 tests) que cubren todos los endpoints y casos de uso.
+
+### Ejecutar tests
+
+```bash
+dotnet test
+```
+
+### Ejecutar tests con salida detallada
+
+```bash
+dotnet test --verbosity detailed
+```
+
+### Cobertura de tests
+
+Los tests cubren:
+- ✅ **POST /api/v1/comments**: Creación exitosa, validaciones de rating (1-5), longitud de comentario (≤500), artículo inexistente, usuario sin compra, duplicados, token faltante, claims alternativos (userId/userID/uid/sub)
+- ✅ **GET /api/v1/comments/article/{articleId}**: Paginación, pageSize válidos (10,20,50,80,100), exclusión de comentarios eliminados, validaciones de página
+- ✅ **GET /api/v1/comments/my-comments**: Comentarios del usuario autenticado, token faltante, exclusión de eliminados
+- ✅ **PUT /api/v1/comments/{id}**: Actualización exitosa, validaciones de input, comentario eliminado, no encontrado, sin autorización
+- ✅ **DELETE /api/v1/comments/{id}**: Eliminación lógica exitosa, ya eliminado, no encontrado, sin autorización
+
+**Resultado**: 52/52 tests pasados ✅ (sin bugs detectados)
+
 ## Licencia
 
 MIT

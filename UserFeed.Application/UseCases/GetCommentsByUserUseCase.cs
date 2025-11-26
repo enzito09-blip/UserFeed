@@ -1,35 +1,36 @@
+using UserFeed.Application.DTOs;
 using UserFeed.Domain.Ports;
 using System.IdentityModel.Tokens.Jwt;
 
 namespace UserFeed.Application.UseCases;
 
-public class DeleteCommentUseCase
+public class GetCommentsByUserUseCase
 {
     private readonly IUserCommentRepository _repository;
 
-    public DeleteCommentUseCase(IUserCommentRepository repository)
+    public GetCommentsByUserUseCase(IUserCommentRepository repository)
     {
         _repository = repository;
     }
 
-    public async Task ExecuteAsync(string commentId, string token)
+    public async Task<IEnumerable<CommentResponse>> ExecuteAsync(string token)
     {
         var userId = ExtractUserIdFromToken(token);
         if (string.IsNullOrEmpty(userId))
             throw new UnauthorizedAccessException("Usuario no autenticado");
 
-        var comment = await _repository.GetByIdAsync(commentId);
-        if (comment == null)
-            throw new KeyNotFoundException("Comentario no encontrado");
+        var comments = await _repository.GetByUserIdAsync(userId, page: 1, pageSize: 1000);
 
-        if (comment.IsDeleted)
-            throw new InvalidOperationException("Este comentario ya esta eliminado y no se puede volver a eliminar");
-
-        if (comment.UserId != userId)
-            throw new UnauthorizedAccessException("No podes eliminar comentarios de otros usuarios");
-
-        comment.Delete();
-        await _repository.UpdateAsync(comment);
+        return comments.Select(c => new CommentResponse
+        {
+            Id = c.Id,
+            UserId = c.UserId,
+            ArticleId = c.ArticleId,
+            Comment = c.Comment,
+            Rating = c.Rating,
+            CreatedAt = c.CreatedAt,
+            UpdatedAt = c.UpdatedAt
+        });
     }
 
     private string? ExtractUserIdFromToken(string authHeader)

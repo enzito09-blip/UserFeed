@@ -22,13 +22,84 @@ Características implementadas:
 ✅ Dockerfile para deployments
 
 📡 Endpoints disponibles:
-POST /api/v1/comments - Crear comentario (requiere auth)
-GET /api/v1/comments/article/{articleId} - Obtener comentarios (público)
-PUT /api/v1/comments/{id} - Actualizar comentario (solo autor)
-DELETE /api/v1/comments/{id} - Eliminar comentario (solo autor)
+✅ POST /api/v1/Comments
+Crear un nuevo comentario sobre un artículo
+
+Extrae userId del token JWT
+Validación de órdenes: Verifica que el usuario tenga órdenes de compra validadas
+Si no tiene → 401: "El usuario no tiene ordenes de compra validas para poder realizar un comentario"
+Validación de artículo: Verifica que el artículo existe en el catálogo
+Si no existe → 400: "El articulo seleccionado {articleId} no existe"
+Validación de compra: Verifica que el usuario compró ese artículo específico
+Consulta GET /orders para obtener órdenes validadas
+Para cada orden, consulta GET /orders/{id} para obtener detalles
+Verifica que el artículo esté en la orden con isValidated = true
+Si no lo compró → 401: "El usuario no ha comprado el articulo seleccionado {articleId} por lo que no podra realizar un comentario"
+Validación de duplicado: Verifica que no exista un comentario previo del usuario para ese artículo
+Si ya existe → 409: "Ya existe un comentario para el articulo {articleId} realizado por el usuario"
+Si todas las validaciones pasan:
+Crea el comentario con CreatedAt = DateTime.UtcNow
+Retorna 201 Created con el CommentResponse completo
+
+✅ GET /api/v1/Comments/my-comments
+Obtener todos los comentarios del usuario autenticado
+
+Extrae userId del token JWT
+Si no hay token → 401: "Token no proporcionado"
+Si token inválido → 401: "Usuario no autenticado"
+Consulta MongoDB filtrando por:
+userId = userId del token
+IsDeleted = false
+Ordena por CreatedAt descendente
+Paginación: page = 1, pageSize = 1000
+Retorna 200 OK con array de CommentResponse
+
+✅ GET /api/v1/Comments/article/{articleId}
+Obtener todos los comentarios de un artículo
+
+Recibe articleId como parámetro de ruta
+Parámetros opcionales de query:
+page (default = 1)
+pageSize (default = 10)
+Consulta MongoDB filtrando por:
+articleId = parámetro recibido
+IsDeleted = false
+Ordena por CreatedAt descendente
+Aplica paginación (Skip/Limit)
+Retorna 200 OK con array de CommentResponse
+Incluye comentarios de todos los usuarios para ese artículo
+Solo muestra comentarios NO eliminados
+
+✅ PUT /api/v1/Comments/{id}
+Actualizar un comentario existente
+
+Extrae userId del token JWT
+Busca el comentario por id
+Validaciones:
+Si no existe → 404: "El comentario seleccionado no existe"
+Si IsDeleted = true → 400: "El comentario esta eliminado y no puede ser actualizado"
+Si el userId del comentario no coincide con el del token → 401: "El comentario seleccionado no lo realizo el usuario logueado, por lo que no lo podrá actualizar"
+Si todo es válido:
+Actualiza Comment y Rating con los datos del request
+Establece UpdatedAt = DateTime.UtcNow
+Retorna 200 OK con CommentResponse actualizado
+
+✅ DELETE /api/v1/Comments/{id}
+Eliminar un comentario (lógico)
+
+Extrae userId del token
+Busca el comentario por id
+Validaciones:
+Si no existe → 404: "Comentario no encontrado"
+Si IsDeleted = true → 400: "Este comentario ya esta eliminado y no se puede volver a eliminar"
+Si el userId del comentario no coincide con el del token → 401: "No podes eliminar comentarios de otros usuarios"
+Si todo es válido:
+Marca IsDeleted = true
+Establece UpdatedAt = DateTime.UtcNow
+Retorna 204 No Content
 
 🌐 Acceso:
-API: http://localhost:5000
+API: http://localhost:5000 (comando para levantarlo -> dotnet UserFeed.Api\bin\Debug\net6.0\UserFeed.Api.dll)
 Swagger UI: http://localhost:5000 (ya abierto en el navegador)
 RabbitMQ Admin: http://localhost:15672 (guest/guest)
 
@@ -37,3 +108,4 @@ Para probar el microservicio completamente necesitarás:
 
 Levantar el servicio Auth (puerto 3000) para obtener tokens JWT, acceder desde postman
 Usar Swagger para probar los endpoints, acceder a http://localhost:5005/index.html
+Acceder a la DB: 

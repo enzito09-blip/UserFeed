@@ -13,14 +13,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Configuración
 var mongoSettings = builder.Configuration.GetSection("MongoDb").Get<MongoDbSettings>() ?? new MongoDbSettings();
 var rabbitSettings = builder.Configuration.GetSection("RabbitMq").Get<RabbitMqSettings>() ?? new RabbitMqSettings();
-var authSettings = builder.Configuration.GetSection("AuthService").Get<AuthServiceSettings>() ?? new AuthServiceSettings();
 var catalogSettings = builder.Configuration.GetSection("CatalogService").Get<CatalogServiceSettings>() ?? new CatalogServiceSettings();
 var orderSettings = builder.Configuration.GetSection("OrderService").Get<OrderServiceSettings>() ?? new OrderServiceSettings();
 
 // Registrar configuraciones
 builder.Services.AddSingleton(mongoSettings);
 builder.Services.AddSingleton(rabbitSettings);
-builder.Services.AddSingleton(authSettings);
 builder.Services.AddSingleton(catalogSettings);
 builder.Services.AddSingleton(orderSettings);
 
@@ -29,12 +27,6 @@ builder.Services.AddSingleton<IUserCommentRepository>(sp => new MongoUserComment
 builder.Services.AddSingleton<IEventPublisher>(sp => new RabbitMqEventPublisher(rabbitSettings));
 
 // Registrar servicios externos
-builder.Services.AddHttpClient<IAuthService, AuthServiceAdapter>((sp, client) =>
-{
-    var settings = sp.GetRequiredService<AuthServiceSettings>();
-    client.BaseAddress = new Uri(settings.BaseUrl);
-});
-
 builder.Services.AddHttpClient<ICatalogService, CatalogServiceAdapter>((sp, client) =>
 {
     var settings = sp.GetRequiredService<CatalogServiceSettings>();
@@ -52,14 +44,7 @@ builder.Services.AddScoped<CreateCommentUseCase>();
 builder.Services.AddScoped<GetCommentsByArticleUseCase>();
 builder.Services.AddScoped<UpdateCommentUseCase>();
 builder.Services.AddScoped<DeleteCommentUseCase>();
-builder.Services.AddScoped<GetArticlesWithCommentsUseCase>(); // requires ICatalogService
-
-// Registrar consumer de RabbitMQ
-builder.Services.AddHostedService(sp =>
-{
-    var authService = sp.GetRequiredService<IAuthService>();
-    return new LogoutConsumer(rabbitSettings, authService);
-});
+builder.Services.AddScoped<GetCommentsByUserUseCase>();
 
 // Configurar autenticación JWT
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -69,37 +54,10 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         {
             ValidateIssuer = false,
             ValidateAudience = false,
-            ValidateLifetime = false, // Los tokens nunca expiran según la arquitectura
+            ValidateLifetime = false,
             ValidateIssuerSigningKey = false,
             RequireSignedTokens = false,
             SignatureValidator = (token, parameters) => new System.IdentityModel.Tokens.Jwt.JwtSecurityToken(token)
-        };
-        
-        // Validar token contra el servicio Auth
-        options.Events = new JwtBearerEvents
-        {
-            OnTokenValidated = async context =>
-            {
-                try
-                {
-                    var authHeader = context.Request.Headers["Authorization"].ToString();
-                    if (!string.IsNullOrEmpty(authHeader) && authHeader.StartsWith("Bearer "))
-                    {
-                        var token = authHeader.Substring("Bearer ".Length).Trim();
-                        var authService = context.HttpContext.RequestServices.GetRequiredService<IAuthService>();
-                        var user = await authService.GetCurrentUserAsync(token);
-                        
-                        if (user == null)
-                        {
-                            context.Fail("Token inválido");
-                        }
-                    }
-                }
-                catch
-                {
-                    context.Fail("Error validando token");
-                }
-            }
         };
     });
 
@@ -176,3 +134,6 @@ Console.WriteLine("🚀 UserFeed Service iniciado en puerto 5005");
 Console.WriteLine("📖 Swagger disponible en http://localhost:5005");
 
 app.Run();
+
+// Clase parcial necesaria para WebApplicationFactory en tests
+public partial class Program { }

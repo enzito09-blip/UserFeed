@@ -2,8 +2,9 @@ namespace UserFeed.Domain.Ports;
 
 public interface ICatalogService
 {
-    Task<bool> ArticleExistsAsync(string articleId);
-    Task<CatalogArticle?> GetArticleAsync(string articleId);
+    Task<bool> ArticleExistsAsync(string articleId, string? token = null);
+    Task<CatalogArticle?> GetArticleAsync(string articleId, string? token = null);
+    Task<IEnumerable<CatalogArticle>> GetAllArticlesAsync(string? token = null);
 }
 
 public class CatalogArticle

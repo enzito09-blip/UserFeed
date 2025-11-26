@@ -7,33 +7,39 @@ namespace UserFeed.Api.Controllers;
 
 [ApiController]
 [Route("api/v1/[controller]")]
-[Authorize]
 public class CommentsController : ControllerBase
 {
     private readonly CreateCommentUseCase _createComment;
     private readonly GetCommentsByArticleUseCase _getCommentsByArticle;
     private readonly UpdateCommentUseCase _updateComment;
     private readonly DeleteCommentUseCase _deleteComment;
-    private readonly GetArticlesWithCommentsUseCase _getArticlesWithComments;
+    private readonly GetCommentsByUserUseCase _getCommentsByUser;
 
     public CommentsController(
         CreateCommentUseCase createComment,
         GetCommentsByArticleUseCase getCommentsByArticle,
         UpdateCommentUseCase updateComment,
         DeleteCommentUseCase deleteComment,
-        GetArticlesWithCommentsUseCase getArticlesWithComments)
+        GetCommentsByUserUseCase getCommentsByUser)
     {
         _createComment = createComment;
         _getCommentsByArticle = getCommentsByArticle;
         _updateComment = updateComment;
         _deleteComment = deleteComment;
-        _getArticlesWithComments = getArticlesWithComments;
+        _getCommentsByUser = getCommentsByUser;
     }
 
     /// <summary>
-    /// Crear un nuevo comentario sobre un artículo
+    /// Crear un nuevo comentario sobre un artículo.
     /// </summary>
+    /// <remarks>
+    /// Reglas:
+    /// - Comment: requerido, máximo 500 caracteres.
+    /// - Rating: entero entre 1 y 5.
+    /// - Se valida que el usuario haya comprado el artículo y no exista comentario previo.
+    /// </remarks>
     [HttpPost]
+    [AllowAnonymous]
     public async Task<ActionResult<CommentResponse>> CreateComment([FromBody] CreateCommentRequest request)
     {
         try
@@ -46,6 +52,10 @@ public class CommentsController : ControllerBase
         {
             return Unauthorized(new { message = ex.Message });
         }
+        catch (InvalidOperationException ex)
+        {
+            return Conflict(new { message = ex.Message });
+        }
         catch (ArgumentException ex)
         {
             return BadRequest(new { message = ex.Message });
@@ -57,16 +67,21 @@ public class CommentsController : ControllerBase
     }
 
     /// <summary>
-    /// Obtener lista de artículos con comentarios (solo para pruebas internas)
+    /// Obtener todos los comentarios del usuario autenticado
     /// </summary>
-    [HttpGet("articles")]
+    [HttpGet("my-comments")]
     [AllowAnonymous]
-    public async Task<ActionResult<IEnumerable<ArticleInfoResponse>>> GetArticlesWithComments()
+    public async Task<ActionResult<IEnumerable<CommentResponse>>> GetMyComments()
     {
         try
         {
-            var result = await _getArticlesWithComments.ExecuteAsync();
+            var token = GetTokenFromHeader();
+            var result = await _getCommentsByUser.ExecuteAsync(token);
             return Ok(result);
+        }
+        catch (UnauthorizedAccessException ex)
+        {
+            return Unauthorized(new { message = ex.Message });
         }
         catch (Exception ex)
         {
@@ -75,8 +90,14 @@ public class CommentsController : ControllerBase
     }
 
     /// <summary>
-    /// Obtener comentarios de un artículo
+    /// Obtener comentarios de un artículo.
     /// </summary>
+    /// <remarks>
+    /// Parámetros:
+    /// - page: número de página (>=1).
+    /// - pageSize: valores permitidos 10, 20, 50, 80 o 100.
+    /// No se incluyen comentarios eliminados (IsDeleted=true).
+    /// </remarks>
     [HttpGet("article/{articleId}")]
     [AllowAnonymous]
     public async Task<ActionResult<IEnumerable<CommentResponse>>> GetCommentsByArticle(
@@ -86,6 +107,15 @@ public class CommentsController : ControllerBase
     {
         try
         {
+            var allowedPageSizes = new[] { 10, 20, 50, 80, 100 };
+            if (!allowedPageSizes.Contains(pageSize))
+            {
+                return BadRequest(new { message = "pageSize inválido. Valores permitidos: 10,20,50,80,100" });
+            }
+            if (page < 1)
+            {
+                return BadRequest(new { message = "page debe ser mayor o igual a 1" });
+            }
             var result = await _getCommentsByArticle.ExecuteAsync(articleId, page, pageSize);
             return Ok(result);
         }
@@ -96,9 +126,17 @@ public class CommentsController : ControllerBase
     }
 
     /// <summary>
-    /// Actualizar un comentario existente
+    /// Actualizar un comentario existente.
     /// </summary>
+    /// <remarks>
+    /// Reglas:
+    /// - Comment: requerido, máximo 500 caracteres.
+    /// - Rating: entero entre 1 y 5.
+    /// - No se puede actualizar si el comentario está eliminado.
+    /// - Solo el autor puede actualizarlo.
+    /// </remarks>
     [HttpPut("{id}")]
+    [AllowAnonymous]
     public async Task<ActionResult<CommentResponse>> UpdateComment(string id, [FromBody] UpdateCommentRequest request)
     {
         try
@@ -110,6 +148,10 @@ public class CommentsController : ControllerBase
         catch (UnauthorizedAccessException ex)
         {
             return Unauthorized(new { message = ex.Message });
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(new { message = ex.Message });
         }
         catch (KeyNotFoundException ex)
         {
@@ -125,6 +167,7 @@ public class CommentsController : ControllerBase
     /// Eliminar un comentario
     /// </summary>
     [HttpDelete("{id}")]
+    [AllowAnonymous]
     public async Task<ActionResult> DeleteComment(string id)
     {
         try
@@ -136,6 +179,10 @@ public class CommentsController : ControllerBase
         catch (UnauthorizedAccessException ex)
         {
             return Unauthorized(new { message = ex.Message });
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(new { message = ex.Message });
         }
         catch (KeyNotFoundException ex)
         {
