@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using UserFeed.Domain.Ports;
+using UserFeed.Domain.Interfaces;
 
 namespace UserFeed.Api.Controllers;
 

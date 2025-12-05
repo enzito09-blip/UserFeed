@@ -1,7 +1,7 @@
 using System.Text;
 using System.Text.Json;
 using RabbitMQ.Client;
-using UserFeed.Domain.Ports;
+using UserFeed.Domain.Interfaces;
 using UserFeed.Infrastructure.Configuration;
 
 namespace UserFeed.Infrastructure.Adapters.Messaging;

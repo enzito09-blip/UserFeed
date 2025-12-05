@@ -2,7 +2,7 @@ using System.Collections.Concurrent;
 using System.Net.Http.Headers;
 using System.Text.Json;
 using UserFeed.Domain.Entities;
-using UserFeed.Domain.Ports;
+using UserFeed.Domain.Interfaces;
 using UserFeed.Infrastructure.Configuration;
 
 namespace UserFeed.Infrastructure.Adapters.External;

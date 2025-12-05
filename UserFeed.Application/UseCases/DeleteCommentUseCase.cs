@@ -1,4 +1,4 @@
-using UserFeed.Domain.Ports;
+using UserFeed.Domain.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
 
 namespace UserFeed.Application.UseCases;

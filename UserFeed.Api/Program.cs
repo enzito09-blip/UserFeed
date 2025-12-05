@@ -2,11 +2,12 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using UserFeed.Application.UseCases;
-using UserFeed.Domain.Ports;
+using UserFeed.Domain.Interfaces;
 using UserFeed.Infrastructure.Adapters.External;
 using UserFeed.Infrastructure.Adapters.Messaging;
 using UserFeed.Infrastructure.Adapters.Persistence;
 using UserFeed.Infrastructure.Configuration;
+using UserFeed.Infrastructure.BackgroundServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,18 +27,35 @@ builder.Services.AddSingleton(orderSettings);
 builder.Services.AddSingleton<IUserCommentRepository>(sp => new MongoUserCommentRepository(mongoSettings));
 builder.Services.AddSingleton<IEventPublisher>(sp => new RabbitMqEventPublisher(rabbitSettings));
 
-// Registrar servicios externos
-builder.Services.AddHttpClient<ICatalogService, CatalogServiceAdapter>((sp, client) =>
+// Registrar conexión a RabbitMQ para servicios externos
+var rabbitFactory = new RabbitMQ.Client.ConnectionFactory()
 {
-    var settings = sp.GetRequiredService<CatalogServiceSettings>();
-    client.BaseAddress = new Uri(settings.BaseUrl);
+    HostName = rabbitSettings.HostName,
+    Port = rabbitSettings.Port,
+    UserName = rabbitSettings.UserName,
+    Password = rabbitSettings.Password
+};
+builder.Services.AddSingleton<RabbitMQ.Client.IConnection>(rabbitFactory.CreateConnection());
+
+// Registrar servicios externos
+// ICatalogService: Usa RabbitMQ con patrón Request-Reply asíncrono
+builder.Services.AddScoped<ICatalogService>(sp => 
+{
+    var connection = sp.GetRequiredService<RabbitMQ.Client.IConnection>();
+    var loggerFactory = sp.GetRequiredService<ILoggerFactory>();
+    var logger = loggerFactory.CreateLogger<RabbitCatalogAdapter>();
+    return new RabbitCatalogAdapter(connection, logger);
 });
 
+// IOrderService: Sigue usando HTTP (puede migrarse a RabbitMQ después)
 builder.Services.AddHttpClient<IOrderService, OrderServiceAdapter>((sp, client) =>
 {
     var settings = sp.GetRequiredService<OrderServiceSettings>();
     client.BaseAddress = new Uri(settings.BaseUrl);
 });
+
+// HttpClient genérico para cualquier servicio
+builder.Services.AddHttpClient();
 
 // Registrar casos de uso (Application)
 builder.Services.AddScoped<CreateCommentUseCase>();
@@ -45,6 +63,10 @@ builder.Services.AddScoped<GetCommentsByArticleUseCase>();
 builder.Services.AddScoped<UpdateCommentUseCase>();
 builder.Services.AddScoped<DeleteCommentUseCase>();
 builder.Services.AddScoped<GetCommentsByUserUseCase>();
+
+// Registrar Background Services para escuchar eventos de RabbitMQ
+// El listener consulta HTTP real al Catalog Service y responde por RabbitMQ
+builder.Services.AddHostedService<CatalogArticleExistListener>();
 
 // Configurar autenticación JWT
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

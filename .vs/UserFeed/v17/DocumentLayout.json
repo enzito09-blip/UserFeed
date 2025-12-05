@@ -3,12 +3,80 @@
   "WorkspaceRootPath": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E2548789-12AF-4229-85B2-6D6EADCBDE38}|UserFeed.Api\\UserFeed.Api.csproj|c:\\users\\ef66622\\source\\repos\\facu\\userfeed\\userfeed.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{E2548789-12AF-4229-85B2-6D6EADCBDE38}|UserFeed.Api\\UserFeed.Api.csproj|solutionrelative:userfeed.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{35245BA5-6B62-4112-A1D0-9EE896A351EE}|UserFeed.Infrastructure\\UserFeed.Infrastructure.csproj|c:\\users\\ef66622\\source\\repos\\facu\\userfeed\\userfeed.infrastructure\\adapters\\external\\catalogserviceadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35245BA5-6B62-4112-A1D0-9EE896A351EE}|UserFeed.Infrastructure\\UserFeed.Infrastructure.csproj|solutionrelative:userfeed.infrastructure\\adapters\\external\\catalogserviceadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2548789-12AF-4229-85B2-6D6EADCBDE38}|UserFeed.Api\\UserFeed.Api.csproj|c:\\users\\ef66622\\source\\repos\\facu\\userfeed\\userfeed.api\\controllers\\catalogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2548789-12AF-4229-85B2-6D6EADCBDE38}|UserFeed.Api\\UserFeed.Api.csproj|solutionrelative:userfeed.api\\controllers\\catalogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35245BA5-6B62-4112-A1D0-9EE896A351EE}|UserFeed.Infrastructure\\UserFeed.Infrastructure.csproj|c:\\users\\ef66622\\source\\repos\\facu\\userfeed\\userfeed.infrastructure\\adapters\\persistence\\mongousercommentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35245BA5-6B62-4112-A1D0-9EE896A351EE}|UserFeed.Infrastructure\\UserFeed.Infrastructure.csproj|solutionrelative:userfeed.infrastructure\\adapters\\persistence\\mongousercommentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35245BA5-6B62-4112-A1D0-9EE896A351EE}|UserFeed.Infrastructure\\UserFeed.Infrastructure.csproj|c:\\users\\ef66622\\source\\repos\\facu\\userfeed\\userfeed.infrastructure\\adapters\\messaging\\rabbitmqeventpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35245BA5-6B62-4112-A1D0-9EE896A351EE}|UserFeed.Infrastructure\\UserFeed.Infrastructure.csproj|solutionrelative:userfeed.infrastructure\\adapters\\messaging\\rabbitmqeventpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35245BA5-6B62-4112-A1D0-9EE896A351EE}|UserFeed.Infrastructure\\UserFeed.Infrastructure.csproj|c:\\users\\ef66622\\source\\repos\\facu\\userfeed\\userfeed.infrastructure\\adapters\\messaging\\logoutconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35245BA5-6B62-4112-A1D0-9EE896A351EE}|UserFeed.Infrastructure\\UserFeed.Infrastructure.csproj|solutionrelative:userfeed.infrastructure\\adapters\\messaging\\logoutconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35245BA5-6B62-4112-A1D0-9EE896A351EE}|UserFeed.Infrastructure\\UserFeed.Infrastructure.csproj|c:\\users\\ef66622\\source\\repos\\facu\\userfeed\\userfeed.infrastructure\\adapters\\external\\orderserviceadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35245BA5-6B62-4112-A1D0-9EE896A351EE}|UserFeed.Infrastructure\\UserFeed.Infrastructure.csproj|solutionrelative:userfeed.infrastructure\\adapters\\external\\orderserviceadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FB6DE11-D8A1-4736-8291-0EDE6C407E74}|UserFeed.Application\\UserFeed.Application.csproj|c:\\users\\ef66622\\source\\repos\\facu\\userfeed\\userfeed.application\\usecases\\updatecommentusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FB6DE11-D8A1-4736-8291-0EDE6C407E74}|UserFeed.Application\\UserFeed.Application.csproj|solutionrelative:userfeed.application\\usecases\\updatecommentusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FB6DE11-D8A1-4736-8291-0EDE6C407E74}|UserFeed.Application\\UserFeed.Application.csproj|c:\\users\\ef66622\\source\\repos\\facu\\userfeed\\userfeed.application\\usecases\\getcommentsbyuserusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FB6DE11-D8A1-4736-8291-0EDE6C407E74}|UserFeed.Application\\UserFeed.Application.csproj|solutionrelative:userfeed.application\\usecases\\getcommentsbyuserusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FB6DE11-D8A1-4736-8291-0EDE6C407E74}|UserFeed.Application\\UserFeed.Application.csproj|c:\\users\\ef66622\\source\\repos\\facu\\userfeed\\userfeed.application\\usecases\\getcommentsbyarticleusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FB6DE11-D8A1-4736-8291-0EDE6C407E74}|UserFeed.Application\\UserFeed.Application.csproj|solutionrelative:userfeed.application\\usecases\\getcommentsbyarticleusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FB6DE11-D8A1-4736-8291-0EDE6C407E74}|UserFeed.Application\\UserFeed.Application.csproj|c:\\users\\ef66622\\source\\repos\\facu\\userfeed\\userfeed.application\\usecases\\deletecommentusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FB6DE11-D8A1-4736-8291-0EDE6C407E74}|UserFeed.Application\\UserFeed.Application.csproj|solutionrelative:userfeed.application\\usecases\\deletecommentusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FB6DE11-D8A1-4736-8291-0EDE6C407E74}|UserFeed.Application\\UserFeed.Application.csproj|c:\\users\\ef66622\\source\\repos\\facu\\userfeed\\userfeed.application\\usecases\\createcommentusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FB6DE11-D8A1-4736-8291-0EDE6C407E74}|UserFeed.Application\\UserFeed.Application.csproj|solutionrelative:userfeed.application\\usecases\\createcommentusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2548789-12AF-4229-85B2-6D6EADCBDE38}|UserFeed.Api\\UserFeed.Api.csproj|c:\\users\\ef66622\\source\\repos\\facu\\userfeed\\userfeed.api\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2548789-12AF-4229-85B2-6D6EADCBDE38}|UserFeed.Api\\UserFeed.Api.csproj|solutionrelative:userfeed.api\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E2548789-12AF-4229-85B2-6D6EADCBDE38}|UserFeed.Api\\UserFeed.Api.csproj|c:\\users\\ef66622\\source\\repos\\facu\\userfeed\\userfeed.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E2548789-12AF-4229-85B2-6D6EADCBDE38}|UserFeed.Api\\UserFeed.Api.csproj|solutionrelative:userfeed.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BE4E689-BE28-478E-A17C-D8AEA9B32982}|UserFeed.Domain\\UserFeed.Domain.csproj|c:\\users\\ef66622\\source\\repos\\facu\\userfeed\\userfeed.domain\\interfaces\\iusercommentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BE4E689-BE28-478E-A17C-D8AEA9B32982}|UserFeed.Domain\\UserFeed.Domain.csproj|solutionrelative:userfeed.domain\\interfaces\\iusercommentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BE4E689-BE28-478E-A17C-D8AEA9B32982}|UserFeed.Domain\\UserFeed.Domain.csproj|c:\\users\\ef66622\\source\\repos\\facu\\userfeed\\userfeed.domain\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BE4E689-BE28-478E-A17C-D8AEA9B32982}|UserFeed.Domain\\UserFeed.Domain.csproj|solutionrelative:userfeed.domain\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BE4E689-BE28-478E-A17C-D8AEA9B32982}|UserFeed.Domain\\UserFeed.Domain.csproj|c:\\users\\ef66622\\source\\repos\\facu\\userfeed\\userfeed.domain\\interfaces\\ieventpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BE4E689-BE28-478E-A17C-D8AEA9B32982}|UserFeed.Domain\\UserFeed.Domain.csproj|solutionrelative:userfeed.domain\\interfaces\\ieventpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BE4E689-BE28-478E-A17C-D8AEA9B32982}|UserFeed.Domain\\UserFeed.Domain.csproj|c:\\users\\ef66622\\source\\repos\\facu\\userfeed\\userfeed.domain\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BE4E689-BE28-478E-A17C-D8AEA9B32982}|UserFeed.Domain\\UserFeed.Domain.csproj|solutionrelative:userfeed.domain\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2548789-12AF-4229-85B2-6D6EADCBDE38}|UserFeed.Api\\UserFeed.Api.csproj|c:\\users\\ef66622\\source\\repos\\facu\\userfeed\\userfeed.api\\controllers\\commentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2548789-12AF-4229-85B2-6D6EADCBDE38}|UserFeed.Api\\UserFeed.Api.csproj|solutionrelative:userfeed.api\\controllers\\commentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2548789-12AF-4229-85B2-6D6EADCBDE38}|UserFeed.Api\\UserFeed.Api.csproj|c:\\users\\ef66622\\source\\repos\\facu\\userfeed\\userfeed.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E2548789-12AF-4229-85B2-6D6EADCBDE38}|UserFeed.Api\\UserFeed.Api.csproj|solutionrelative:userfeed.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +86,164 @@
       "DocumentGroups": [
         {
           "DockedWidth": 349,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MongoUserCommentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Infrastructure\\Adapters\\Persistence\\MongoUserCommentRepository.cs",
+              "RelativeDocumentMoniker": "UserFeed.Infrastructure\\Adapters\\Persistence\\MongoUserCommentRepository.cs",
+              "ToolTip": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Infrastructure\\Adapters\\Persistence\\MongoUserCommentRepository.cs",
+              "RelativeToolTip": "UserFeed.Infrastructure\\Adapters\\Persistence\\MongoUserCommentRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T11:54:28.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RabbitMqEventPublisher.cs",
+              "DocumentMoniker": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Infrastructure\\Adapters\\Messaging\\RabbitMqEventPublisher.cs",
+              "RelativeDocumentMoniker": "UserFeed.Infrastructure\\Adapters\\Messaging\\RabbitMqEventPublisher.cs",
+              "ToolTip": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Infrastructure\\Adapters\\Messaging\\RabbitMqEventPublisher.cs",
+              "RelativeToolTip": "UserFeed.Infrastructure\\Adapters\\Messaging\\RabbitMqEventPublisher.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T11:54:05.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LogoutConsumer.cs",
+              "DocumentMoniker": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Infrastructure\\Adapters\\Messaging\\LogoutConsumer.cs",
+              "RelativeDocumentMoniker": "UserFeed.Infrastructure\\Adapters\\Messaging\\LogoutConsumer.cs",
+              "ToolTip": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Infrastructure\\Adapters\\Messaging\\LogoutConsumer.cs",
+              "RelativeToolTip": "UserFeed.Infrastructure\\Adapters\\Messaging\\LogoutConsumer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T11:53:59.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OrderServiceAdapter.cs",
+              "DocumentMoniker": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Infrastructure\\Adapters\\External\\OrderServiceAdapter.cs",
+              "RelativeDocumentMoniker": "UserFeed.Infrastructure\\Adapters\\External\\OrderServiceAdapter.cs",
+              "ToolTip": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Infrastructure\\Adapters\\External\\OrderServiceAdapter.cs",
+              "RelativeToolTip": "UserFeed.Infrastructure\\Adapters\\External\\OrderServiceAdapter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T11:53:48.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CatalogServiceAdapter.cs",
+              "DocumentMoniker": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Infrastructure\\Adapters\\External\\CatalogServiceAdapter.cs",
+              "RelativeDocumentMoniker": "UserFeed.Infrastructure\\Adapters\\External\\CatalogServiceAdapter.cs",
+              "ToolTip": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Infrastructure\\Adapters\\External\\CatalogServiceAdapter.cs",
+              "RelativeToolTip": "UserFeed.Infrastructure\\Adapters\\External\\CatalogServiceAdapter.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwBcAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T11:53:42.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UpdateCommentUseCase.cs",
+              "DocumentMoniker": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Application\\UseCases\\UpdateCommentUseCase.cs",
+              "RelativeDocumentMoniker": "UserFeed.Application\\UseCases\\UpdateCommentUseCase.cs",
+              "ToolTip": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Application\\UseCases\\UpdateCommentUseCase.cs",
+              "RelativeToolTip": "UserFeed.Application\\UseCases\\UpdateCommentUseCase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T11:53:37.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CatalogController.cs",
+              "DocumentMoniker": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Api\\Controllers\\CatalogController.cs",
+              "RelativeDocumentMoniker": "UserFeed.Api\\Controllers\\CatalogController.cs",
+              "ToolTip": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Api\\Controllers\\CatalogController.cs",
+              "RelativeToolTip": "UserFeed.Api\\Controllers\\CatalogController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwB8AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T11:52:45.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GetCommentsByUserUseCase.cs",
+              "DocumentMoniker": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Application\\UseCases\\GetCommentsByUserUseCase.cs",
+              "RelativeDocumentMoniker": "UserFeed.Application\\UseCases\\GetCommentsByUserUseCase.cs",
+              "ToolTip": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Application\\UseCases\\GetCommentsByUserUseCase.cs",
+              "RelativeToolTip": "UserFeed.Application\\UseCases\\GetCommentsByUserUseCase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T11:53:26.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GetCommentsByArticleUseCase.cs",
+              "DocumentMoniker": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Application\\UseCases\\GetCommentsByArticleUseCase.cs",
+              "RelativeDocumentMoniker": "UserFeed.Application\\UseCases\\GetCommentsByArticleUseCase.cs",
+              "ToolTip": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Application\\UseCases\\GetCommentsByArticleUseCase.cs",
+              "RelativeToolTip": "UserFeed.Application\\UseCases\\GetCommentsByArticleUseCase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T11:53:19.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DeleteCommentUseCase.cs",
+              "DocumentMoniker": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Application\\UseCases\\DeleteCommentUseCase.cs",
+              "RelativeDocumentMoniker": "UserFeed.Application\\UseCases\\DeleteCommentUseCase.cs",
+              "ToolTip": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Application\\UseCases\\DeleteCommentUseCase.cs",
+              "RelativeToolTip": "UserFeed.Application\\UseCases\\DeleteCommentUseCase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T11:53:11.935Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CreateCommentUseCase.cs",
+              "DocumentMoniker": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Application\\UseCases\\CreateCommentUseCase.cs",
+              "RelativeDocumentMoniker": "UserFeed.Application\\UseCases\\CreateCommentUseCase.cs",
+              "ToolTip": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Application\\UseCases\\CreateCommentUseCase.cs",
+              "RelativeToolTip": "UserFeed.Application\\UseCases\\CreateCommentUseCase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T11:52:58.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Api\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "UserFeed.Api\\Controllers\\OrdersController.cs",
+              "ToolTip": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Api\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "UserFeed.Api\\Controllers\\OrdersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T11:52:53.605Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:133:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -30,7 +254,72 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 13,
+              "Title": "IUserCommentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Domain\\Interfaces\\IUserCommentRepository.cs",
+              "RelativeDocumentMoniker": "UserFeed.Domain\\Interfaces\\IUserCommentRepository.cs",
+              "ToolTip": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Domain\\Interfaces\\IUserCommentRepository.cs",
+              "RelativeToolTip": "UserFeed.Domain\\Interfaces\\IUserCommentRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T11:51:35.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IOrderService.cs",
+              "DocumentMoniker": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Domain\\Interfaces\\IOrderService.cs",
+              "RelativeDocumentMoniker": "UserFeed.Domain\\Interfaces\\IOrderService.cs",
+              "ToolTip": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Domain\\Interfaces\\IOrderService.cs",
+              "RelativeToolTip": "UserFeed.Domain\\Interfaces\\IOrderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T11:51:30.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IEventPublisher.cs",
+              "DocumentMoniker": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Domain\\Interfaces\\IEventPublisher.cs",
+              "RelativeDocumentMoniker": "UserFeed.Domain\\Interfaces\\IEventPublisher.cs",
+              "ToolTip": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Domain\\Interfaces\\IEventPublisher.cs",
+              "RelativeToolTip": "UserFeed.Domain\\Interfaces\\IEventPublisher.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T11:51:25.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Domain\\Interfaces\\IAuthService.cs",
+              "RelativeDocumentMoniker": "UserFeed.Domain\\Interfaces\\IAuthService.cs",
+              "ToolTip": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Domain\\Interfaces\\IAuthService.cs",
+              "RelativeToolTip": "UserFeed.Domain\\Interfaces\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T11:51:03.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CommentsController.cs",
+              "DocumentMoniker": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Api\\Controllers\\CommentsController.cs",
+              "RelativeDocumentMoniker": "UserFeed.Api\\Controllers\\CommentsController.cs",
+              "ToolTip": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Api\\Controllers\\CommentsController.cs",
+              "RelativeToolTip": "UserFeed.Api\\Controllers\\CommentsController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAuwDIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T11:48:52.56Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Api\\appsettings.json",
               "RelativeDocumentMoniker": "UserFeed.Api\\appsettings.json",
@@ -43,15 +332,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 12,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Api\\Program.cs",
               "RelativeDocumentMoniker": "UserFeed.Api\\Program.cs",
               "ToolTip": "C:\\Users\\EF66622\\source\\repos\\Facu\\UserFeed\\UserFeed.Api\\Program.cs",
               "RelativeToolTip": "UserFeed.Api\\Program.cs",
-              "ViewState": "AgIAAJ4AAAAAAAAAAIAwwLEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAcwCEAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T14:41:54.8Z"
+              "WhenOpened": "2025-11-18T14:41:54.8Z",
+              "EditorCaption": ""
             }
           ]
         }

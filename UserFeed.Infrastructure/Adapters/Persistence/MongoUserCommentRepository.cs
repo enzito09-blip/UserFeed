@@ -1,6 +1,6 @@
 using MongoDB.Driver;
 using UserFeed.Domain.Entities;
-using UserFeed.Domain.Ports;
+using UserFeed.Domain.Interfaces;
 using UserFeed.Infrastructure.Configuration;
 
 namespace UserFeed.Infrastructure.Adapters.Persistence;

@@ -3,7 +3,7 @@ using System.Text.Json;
 using Microsoft.Extensions.Hosting;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
-using UserFeed.Domain.Ports;
+using UserFeed.Domain.Interfaces;
 using UserFeed.Infrastructure.Configuration;
 
 namespace UserFeed.Infrastructure.Adapters.Messaging;

@@ -1,4 +1,4 @@
-namespace UserFeed.Domain.Ports;
+namespace UserFeed.Domain.Interfaces;
 
 public interface IEventPublisher
 {

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using UserFeed.Domain.Ports;
+using UserFeed.Domain.Interfaces;
 
 namespace UserFeed.Api.Controllers;
 
@@ -27,8 +27,8 @@ public class CatalogController : ControllerBase
     {
         try
         {
-            // Extraer token si existe para propagarlo al catálogo
-            var token = Request.Headers["Authorization"].ToString()?.Replace("Bearer ", "");
+            // Extraer token del header para propagarlo al catálogo
+            var token = Request.Headers["Authorization"].ToString();
             var exists = await _catalogService.ArticleExistsAsync(articleId, token);
             return Ok(new { articleId, exists });
         }

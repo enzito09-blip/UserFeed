@@ -1,5 +1,5 @@
 using System.Net.Http.Headers;
-using UserFeed.Domain.Ports;
+using UserFeed.Domain.Interfaces;
 using UserFeed.Infrastructure.Configuration;
 
 namespace UserFeed.Infrastructure.Adapters.External;

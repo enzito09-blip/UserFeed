@@ -1,5 +1,5 @@
 using UserFeed.Application.DTOs;
-using UserFeed.Domain.Ports;
+using UserFeed.Domain.Interfaces;
 
 namespace UserFeed.Application.UseCases;
 

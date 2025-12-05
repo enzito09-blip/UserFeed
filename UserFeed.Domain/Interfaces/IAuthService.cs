@@ -1,6 +1,6 @@
 using UserFeed.Domain.Entities;
 
-namespace UserFeed.Domain.Ports;
+namespace UserFeed.Domain.Interfaces;
 
 public interface IAuthService
 {

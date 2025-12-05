@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\UserFeed.Domain\UserFeed.Domain.csproj" />
+    <ProjectReference Include="..\UserFeed.Application\UserFeed.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>
